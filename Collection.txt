@@ -1,0 +1,235 @@
+Collection
+
+1
+import java.util.Map;
+import java.util.TreeMap;
+
+
+public class contactnumber {
+	
+	String phonenumber;
+	String Name;
+	String Email;
+	Enum Gender;
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Map<String, contactnumber> map = new TreeMap<String, contactnumber>();
+		
+		String s1 = new String("123456789");
+		String s2 = new String("785643265");
+		String s3 = new String("345678902");
+		
+		contactnumber c1 = new contactnumber();
+		
+		contactnumber c2 = new contactnumber();
+		
+		contactnumber c3 = new contactnumber();
+		
+		map.put(s1, c1);
+		map.put(s2, c2);
+		map.put(s3, c3);
+		
+		for (Map.Entry m:map.entrySet()) {
+			System.out.println(m.getKey()+" "+m.getValue());
+		}
+		
+		
+		
+		
+
+	}
+
+}
+
+2.
+
+package ForNumber;
+
+import java.util.ArrayList;
+
+public class ForArraylist {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ArrayList<String> Employee  = new ArrayList<String>();
+		
+		Employee.add("Nitish Kumar");
+		Employee.add("7981565119");
+		Employee.add("CG");
+		Employee.add("Naturality");
+		Employee.add("Good Employee");
+		Employee.add("Hyderabad");
+		Employee.add("Mumbai");
+		Employee.add("Chennai");
+		Employee.add("Hyderabad");
+		Employee.add(null);
+		
+		
+		System.out.println(Employee);
+
+	}
+
+}
+package ForNumber;
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class forEmployeetreeset {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		SortedSet<String> Employee  = new TreeSet<>();
+		
+		
+		Employee.add("Nitish Kumar");
+		Employee.add("7981565119");
+		Employee.add("CG");
+		Employee.add("Naturality");
+		Employee.add("Good Employee");
+		Employee.add("Hyderabad");
+		Employee.add("Mumbai");
+		Employee.add("Chennai");
+		Employee.add("Hyderabad");
+		
+		System.out.println("Employee set : " + Employee);
+		//tree set not allow the null values
+		//dupliacte values doesnot allowed in treeset
+		
+
+		
+
+	}
+
+}
+package ForNumber;
+
+import java.util.HashSet;
+
+public class ForHasset {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		HashSet <String> Employee = new HashSet<String>();
+		
+		Employee.add("Nitish Kumar");
+		Employee.add("7981565119");
+		Employee.add("CG");
+		Employee.add("Naturality");
+		Employee.add("Good Employee");
+		Employee.add("Hyderabad");
+		Employee.add("Mumbai");
+		Employee.add("Chennai");
+		Employee.add("Hyderabad");
+		Employee.add(null);
+		
+		System.out.println(Employee);
+		
+
+	}
+}
+3.
+package ForNumber;
+
+import java.util.*;
+
+public class Employee  implements Comparable<Employee> {
+	
+	int Id;
+	String name;
+	String Department;
+	int Salary;
+	public Employee(int Id, String name, String Department, int Salary)
+	{
+		this.Id = Id;
+		this.name = name;
+		this.Department = Department;
+		this.Salary = Salary;
+	}
+	
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDepartment() {
+		return Department;
+	}
+
+	public void setDepartment(String department) {
+		Department = department;
+	}
+
+	public int getSalary() {
+		return Salary;
+	}
+
+	public void setSalary(int salary) {
+		Salary = salary;
+	}
+
+	public void display()
+	{
+		System.out.println("id : "+ getId() + " name : " + getName()+ " department :" + getDepartment()+ " salary : "+ getSalary());
+		
+	}
+	
+	public int compareTo(Employee name)
+	{
+		if(this.name==name.getName())
+		{
+			return 0;
+		}
+			else
+				{
+				return 1;
+				}
+		}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+			Set<Employee> st = new TreeSet<Employee>();
+			
+			Employee e = new Employee(1,"Kalyan", "Developer", 26000);
+			
+			Employee e1 = new Employee(2, "Nitish", "Developer", 45798);
+			
+			Employee e2 = new Employee(3,"Soumya", "SQLDeveloper" , 35676);
+			
+			st.add(e);
+			st.add(e1);
+			st.add(e2);
+			for(Employee st1: st)
+			{
+				st1.display();
+			}
+			
+		}
+		
+		
+		
+		
+	
+
+
+	}
+
