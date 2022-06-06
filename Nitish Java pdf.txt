@@ -1,0 +1,74 @@
+Assigment questions for string
+
+1.find the lenth for hello world?
+ 
+class CalcLentgh {
+public static void main(String args[] ){
+String name = "Hello World";
+int lentgh = name.lentgh();
+Sytem.out.println("the lenth of the String \""+name+"\" is: " +length); }
+}
+
+2.add two strings
+class Nitish{
+public static void main(String args[] ){
+String s = "Hello + "& " + "How are you" ;
+System.out.println(s); }
+}
+
+3.print lowercase
+public class Nitish {
+ public static void main(String args[] ){
+  String str = " java string pool refers to collection of strings which are stored in heap memory";
+  String result = str.toLowerCase();
+System.out.println("Original String : " + str);
+System.out.println("Lowercase String : " + result);
+
+4. print uppercase
+public class Nitish {
+ public static void main(String args[] ){
+  String str = " java string pool refers to collection of strings which are stored in heap memory";
+  String result = str.toUpperCase();
+System.out.println("Original String : " + str);
+System.out.println("Lowercase String : " + result);}
+}
+
+5. replace method 
+public class nitish {
+public static void main( String args[] ){
+String Nitish =" java string pool refers to collection of strings which are stored in heap memory";
+String replaceString=Nitish.replaceAll("a,"$");
+System.out.println(replaceString); }
+}
+
+6.Contains the name
+class Nitish {
+public static void main(String args[] ){
+String Nitish =" java string pool refers to collection of strings which are stored in heap memory";
+// print true
+System.out.println( Nitish.contains("collection"));
+// print false
+System.out.println(Nitish.contains("greeks"));}
+}
+
+7.string buffer using append() It is use to add text at the end of the existing text.
+public class Nitish {
+public static void main (String [] args){
+StringBuffer s = new StringBuffer("nitish is");
+s.append("Good student");
+System.out.println(s);}
+}
+
+8.String Buffer using insert() it is used to insert text at the specified index position
+public class Main {
+public static void main (String[] args) {
+s = new StringBuffer("nitish is");
+s.insert(1,"good Student");
+System.out.println(s);
+
+9. String Buffer using Reverse() Its is used to returns the reverse object on which it was called.
+Public class Main {
+public static void main (String[] args ) {
+String Buffer s = new StringBuffer("Nitish is good student");
+s.reverse();
+System.out.println(s);
