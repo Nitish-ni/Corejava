@@ -1,0 +1,179 @@
+Lamda 
+
+1.package Lambda_Assignmanets;
+
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+public class Firstletter 
+{
+	public static void main(String[] args) 
+	{
+		String[] strA= {"monday", "tuesday", "wednesday","thursday", "friday","saturday","sunday"};
+		
+		System.out.println(Arrays.stream(strA)
+				.filter(Objects::nonNull)
+				.map(s->s.charAt(0))
+				.collect(Collectors.toList()));
+		}
+		
+	}
+
+2.
+package Lambda_Assignmanets;
+
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+public class Methods 
+{
+	public static void main(String[] args) 
+	{
+		Supplier<Integer> supp=()-> new Integer((int)(Math.random()*10000));
+		
+		System.out.println("Supplier API");
+		
+		
+		Consumer<Integer> cons=(value)->System.out.println("value");
+		
+		System.out.println("consumer API");
+		
+		
+		Predicate predicate = (value) -> value != null;
+			System.out.println("predicate API");
+		
+		Function<Long,Long>adder =(value) -> value + 3;
+		Long resultlambda = adder.apply((long)8);
+		
+		
+		System.out.println("resultlambda function API= " +resultlambda);
+
+	}
+
+}
+
+3.
+package Lambda_Assignmanets;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.stream.Stream;
+
+public class OddLength 
+{
+	public static void main(String[] args) 
+	{
+		Stream<String> s = Stream.of("hello", "Nitish");
+		
+		Consumer<String> a = str -> System.out.println(str.toUpperCase());
+		
+		a.accept("hello Nitish");
+		
+	}
+
+}
+
+4.
+package Lambda_Assignmanets;
+
+
+
+interface Airthmetic
+{
+	int operation(int a,int b);
+}
+public class Operations 
+{
+	public static void main(String[] args) 
+	{
+		Airthmetic add= (int a,int b)->(a+b);
+			System.out.println("addition : " +add.operation(42, 55) );
+		
+			Airthmetic sub= (int a,int b)->(a-b);
+			System.out.println("subtraction : " +sub.operation(234, 45) );
+		
+			Airthmetic mul= (int a,int b)->(a*b);
+			System.out.println("multiplication :" +mul.operation(5, 5) );
+		
+			Airthmetic div= (int a,int b)->(a/b);
+			System.out.println("division :" +div.operation(225, 5) );
+		
+	}
+	
+
+}
+
+5.
+
+package Lambda_Assignmanets;
+
+public class OrderPrice 
+{
+	public static void main(String[] args) 
+	{
+		product p = (a,b) ->{ 
+			if(a<b)
+			   System.out.println(a+ " accepted");
+			
+			else if(b<a)
+			  System.out.println(b+ " not accepted");
+			else
+				System.out.println(a+ " equal amount so not accepted");
+			
+		};
+		
+		p.values(10000, 20000);
+	}
+
+}
+
+interface product
+{
+	void values(int a, int b);
+}
+
+6.package Lambda_Assignmanets;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Replacemethod 
+{
+	public static void main(String[] args) throws CloneNotSupportedException
+	{
+		ArrayList<String> words = new ArrayList<>(Arrays.asList("Nitish","Sivakumar","Bahubali","Prabhas","Ramcharan"));
+		System.out.println(words);
+		words.replaceAll(e->e.toUpperCase());
+		System.out.println(words);
+    }
+
+}
+
+7.
+package Lambda_Assignmanets;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.function.UnaryOperator;
+
+public class Replaceallunary {
+	public static void main(String[] args) throws CloneNotSupportedException
+	{
+		ArrayList<String> words = new ArrayList<>(Arrays.asList("Siddhu","Balu","Giridhar","Chandramohan","Ravikrishna"));
+		System.out.println(words);
+		words.replaceAll(new MyOperator());
+		System.out.println(words);
+}
+}
+class MyOperator implements UnaryOperator<String>
+{
+
+	@Override
+	public String apply(String t) {
+		// TODO Auto-generated method stub
+		return t.toUpperCase(); 
+	}
+}
